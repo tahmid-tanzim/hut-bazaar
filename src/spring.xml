@@ -3,15 +3,23 @@
 
 <beans>
     <bean id="triangle" class="org.tanzim.javabrains.Triangle">
-        <!-- Setter Properties -->
-<!--        <property name="type" value="Equilateral" />-->
-
-        <!-- Separate constructor -->
-<!--        <constructor-arg type="java.lang.String" value="Equilateral" />
-        <constructor-arg type="int" value="20" />-->
-        
-        <!-- indexing constructor parameter -->
-        <constructor-arg index="0" value="Equilateral" />
-        <constructor-arg index="1" value="20" />        
+        <property name="pointA" ref="point1" />
+        <property name="pointB" ref="point2" />
+        <property name="pointC" ref="point3" />
     </bean>
+    
+    <bean id="point1" class="org.tanzim.javabrains.Point">
+        <property name="x" value="0" />
+        <property name="y" value="0" />
+    </bean>    
+
+    <bean id="point2" class="org.tanzim.javabrains.Point">
+        <property name="x" value="-20" />
+        <property name="y" value="0" />
+    </bean>
+        
+    <bean id="point3" class="org.tanzim.javabrains.Point">
+        <property name="x" value="-10" />
+        <property name="y" value="20" />
+    </bean>        
 </beans>

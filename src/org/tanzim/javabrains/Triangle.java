@@ -10,39 +10,37 @@ package org.tanzim.javabrains;
  * @author tanzim
  */
 public class Triangle {
-    private String type;
-    private int height;
+    private Point pointA;
+    private Point pointB;
+    private Point pointC;
     
-    public Triangle(String type) {
-        this.type = type;
+    public void setPointA(Point point) {
+        this.pointA = point;
+    }
+    
+    public Point getPointA() {
+        return this.pointA;
     }
 
-    public Triangle(int height) {
-        this.height = height;
-    }    
-    
-    public Triangle(String type, int height) {
-        this.type = type;
-        this.height = height;
-    }    
-    
-    public void setType(String type) {
-        this.type = type;
+    public void setPointB(Point point) {
+        this.pointB = point;
     }
     
-    public String getType() {
-        return this.type;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
+    public Point getPointB() {
+        return this.pointB;
+    }    
+    
+    public void setPointC(Point point) {
+        this.pointC = point;
     }
     
-    public int getHeight() {
-        return this.height;
-    }    
+    public Point getPointC() {
+        return this.pointC;
+    }
     
     public void draw(){
-        System.out.println(this.getType() + " Triangle Drawn of height: " + this.getHeight());
+        System.out.println("PointA - ("+ this.getPointA().getX() + ", " + this.getPointA().getY() + ")");
+        System.out.println("PointB - ("+ this.getPointB().getX() + ", " + this.getPointB().getY() + ")");
+        System.out.println("PointC - ("+ this.getPointC().getX() + ", " + this.getPointC().getY() + ")");
     }
 }
