@@ -3,18 +3,12 @@
 
 <beans>
     <bean id="triangle" class="org.tanzim.javabrains.Triangle">
-        <property name="pointA" ref ="point1" /> 
-        <property name="pointB">
-            <bean class="org.tanzim.javabrains.Point">
-                <property name="x" value="-20" />
-                <property name="y" value="0" />
-            </bean>            
-        </property>
-        <property name="pointC">
-            <bean class="org.tanzim.javabrains.Point">
-                <property name="x" value="-10" />
-                <property name="y" value="20" />
-            </bean>              
+        <property name="points">
+            <list>
+                <ref bean="point1" />
+                <ref bean="point2" />
+                <ref bean="point3" />
+            </list>
         </property>
     </bean>
     
@@ -23,5 +17,15 @@
         <property name="y" value="0" />
     </bean>  
     
+    <bean id="point2" class="org.tanzim.javabrains.Point">
+        <property name="x" value="-20" />
+        <property name="y" value="0" />
+    </bean>            
+    
+    <bean id="point3" class="org.tanzim.javabrains.Point">
+        <property name="x" value="-10" />
+        <property name="y" value="20" />
+    </bean>  
+        
     <alias name="triangle" alias="triangle-alias" />  
 </beans>
