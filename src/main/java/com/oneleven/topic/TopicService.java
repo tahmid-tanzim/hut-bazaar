@@ -29,8 +29,21 @@ public class TopicService {
         return null;
     }
 
-    public Topic addTopic(Topic newTopic) {
-        this.topics.add(newTopic);
-        return newTopic;
+    public void addTopic(Topic topic) {
+        this.topics.add(topic);
+    }
+
+    public void updateTopic(Long id, Topic topic) {
+        for (int i = 0; i < this.topics.size(); i++) {
+            Topic t = this.topics.get(i);
+            if(t.getId().equals(id)) {
+                this.topics.set(i, topic);
+                return;
+            }
+        }
+    }
+
+    public void removeTopic(Long id) {
+        this.topics.removeIf(x -> x.getId().equals(id));
     }
 }
