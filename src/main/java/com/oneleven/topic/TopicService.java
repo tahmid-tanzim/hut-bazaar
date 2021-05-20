@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class TopicService {
@@ -19,4 +20,17 @@ public class TopicService {
         return topics;
     }
 
+    public Topic getTopic(Long id) {
+        try {
+            return this.topics.stream().filter(x -> x.getId().equals(id)).findFirst().get();
+        } catch (NoSuchElementException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
+    public Topic addTopic(Topic newTopic) {
+        this.topics.add(newTopic);
+        return newTopic;
+    }
 }
