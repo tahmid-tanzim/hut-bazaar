@@ -12,7 +12,7 @@
 	<artifactId>hut-bazaar</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Hut Bazaar</name>
-	<description>Hut Bazaar Product in Spring Boot</description>
+	<description>Hut Bazaar REST Application in Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
