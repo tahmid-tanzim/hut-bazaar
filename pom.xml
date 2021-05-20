@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.oneleven</groupId>
-	<artifactId>product</artifactId>
+	<artifactId>hut-bazaar</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>product</name>
+	<name>Hut Bazaar</name>
 	<description>Hut Bazaar Product in Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>

@@ -1,4 +1,4 @@
-package com.oneleven.product;
+package com.oneleven.topic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
