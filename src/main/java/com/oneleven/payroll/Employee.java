@@ -11,7 +11,7 @@ class Employee {
 
     private @Id
     @GeneratedValue
-    Long id;
+    Long employeeId;
     private String name;
     private String role;
 
@@ -23,8 +23,8 @@ class Employee {
         this.role = role;
     }
 
-    public Long getId() {
-        return this.id;
+    public Long getEmployeeId() {
+        return this.employeeId;
     }
 
     public String getName() {
@@ -35,8 +35,8 @@ class Employee {
         return this.role;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setEmployeeId(Long employeeId) {
+        this.employeeId = employeeId;
     }
 
     public void setName(String name) {
@@ -55,17 +55,17 @@ class Employee {
         if (!(o instanceof Employee))
             return false;
         Employee employee = (Employee) o;
-        return Objects.equals(this.id, employee.id) && Objects.equals(this.name, employee.name)
+        return Objects.equals(this.employeeId, employee.employeeId) && Objects.equals(this.name, employee.name)
                 && Objects.equals(this.role, employee.role);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.id, this.name, this.role);
+        return Objects.hash(this.employeeId, this.name, this.role);
     }
 
     @Override
     public String toString() {
-        return "Employee{" + "id=" + this.id + ", name='" + this.name + '\'' + ", role='" + this.role + '\'' + '}';
+        return "Employee{" + "id=" + this.employeeId + ", name='" + this.name + '\'' + ", role='" + this.role + '\'' + '}';
     }
 }

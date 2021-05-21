@@ -1,25 +1,31 @@
 package com.oneleven.topic;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Topic {
-    private Long id;
+    private @Id
+    @GeneratedValue
+    Long topicId;
     private String name;
     private String description;
 
     public Topic() {
     }
 
-    public Topic(Long id, String name, String description) {
-        this.id = id;
+    public Topic(String name, String description) {
         this.name = name;
         this.description = description;
     }
 
-    public Long getId() {
-        return id;
+    public Long getTopicId() {
+        return topicId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setTopicId(Long topicId) {
+        this.topicId = topicId;
     }
 
     public String getName() {
