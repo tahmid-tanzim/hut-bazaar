@@ -1,37 +1,42 @@
-package com.oneleven.topic;
+package com.oneleven.course;
+
+import com.oneleven.topic.Topic;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class Topic {
+public class Course {
     private @Id
     @GeneratedValue
     Long id;
     private String name;
     private String description;
+    @ManyToOne
+    private Topic topic;
 
-    public Topic() {
+    public Course() {
     }
 
-    public Topic(String name, String description) {
+    public Course(String name, String description) {
         this.name = name;
         this.description = description;
     }
 
-    public Topic(Long id) {
-        this.id = id;
-        this.name = "Miscellaneous";
-        this.description = "mĭs'ə-lā'nē-əs. Filters. The definition of miscellaneous is people or things that are varied or mixed and cannot easily be categorized or grouped. An example of miscellaneous is a gathering of a bunch of people who have little in common and who can't be easily grouped into different groups.";
+    public Course(String name, String description, Long topicId) {
+        this.name = name;
+        this.description = description;
+        this.topic = new Topic(topicId);
     }
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long topicId) {
-        this.id = topicId;
+    public void setId(Long courseId) {
+        this.id = courseId;
     }
 
     public String getName() {
@@ -48,5 +53,13 @@ public class Topic {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Topic getTopic() {
+        return topic;
+    }
+
+    public void setTopic(Topic topic) {
+        this.topic = topic;
     }
 }

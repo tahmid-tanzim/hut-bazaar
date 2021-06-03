@@ -12,12 +12,6 @@ public class TopicService {
     private TopicRepository topicRepository;
     private List<Topic> topics = new ArrayList<>();
 
-//    public TopicService() {
-//        this.topics.add(new Topic(1l, "Spring Framework", "Lorem Ipsum is simply dummy text of the printing and typesetting industry."));
-//        this.topics.add(new Topic(2l, "Django Framework", "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."));
-//        this.topics.add(new Topic(3l, "Laravel Framework", "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."));
-//    }
-
     public List<Topic> getAllTopics() {
         List<Topic> topics = new ArrayList<>();
         this.topicRepository.findAll()
@@ -41,7 +35,7 @@ public class TopicService {
                     return this.topicRepository.save(t);
                 })
                 .orElseGet(() -> {
-                    topic.setTopicId(id);
+                    topic.setId(id);
                     return this.topicRepository.save(topic);
                 });
     }
