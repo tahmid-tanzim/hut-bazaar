@@ -1,10 +1,10 @@
-import express, { Router, Request, Response } from "express";
-import httpStatusCodes from "../helpers/http-status-codes";
+import express, { Router, Request, Response, NextFunction } from "express";
+import httpStatusCodes from "../utils/http-status-codes";
 
 const router: Router = express.Router();
 
-router.get('/api/category', (req: Request, res: Response) => {
-    return res.send({
+router.get('/api/category', (req: Request, res: Response, next: NextFunction): void => {
+    res.send({
         data: [
             {
                 id: 1,
@@ -22,8 +22,8 @@ router.get('/api/category', (req: Request, res: Response) => {
     }).status(httpStatusCodes.OK);
 });
 
-router.all("*", async (req: Request, res: Response, next) => {
-    return res.status(httpStatusCodes.NOT_FOUND).send({ message: "404 Not Found" });
+router.all("*", (req: Request, res: Response, next: NextFunction): void => {
+    res.status(httpStatusCodes.NOT_FOUND).send({ message: "404 Not Found" });
 });
 
 export default router;

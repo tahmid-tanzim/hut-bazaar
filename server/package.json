@@ -1,30 +1,37 @@
 {
-  "name": "hut-bazaar-server",
-  "version": "1.0.0",
-  "description": "An online platform for buyers and sellers.",
-  "main": "index.js",
-  "engines" : { 
-    "npm" : ">=8.5.5",
-    "node" : ">=16.14.0"
-  },
-  "scripts": {
-    "build": "npx tsc",
-    "start": "node dist/index.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "Tahmid Tanzim <tahmid.tanzim@gmail.com>",
-  "license": "ISC",
-  "dependencies": {
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1"
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.13",
-    "@types/node": "^18.7.3",
-    "concurrently": "^7.3.0",
-    "nodemon": "^2.0.19",
-    "typescript": "^4.7.4"
-  }
+    "name": "hut-bazaar-server",
+    "version": "1.0.0",
+    "description": "An online platform for buyers and sellers.",
+    "main": "index.js",
+    "engines": {
+        "npm": ">=8.11.0",
+        "node": ">=16.16.0"
+    },
+    "scripts": {
+        "build": "npx tsc",
+        "start": "node dist/index.js",
+        "dev": "concurrently 'npx tsc --watch' 'nodemon -q dist/index.js'",
+        "my-test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
+        "test": "jest --coverage"
+    },
+    "keywords": [],
+    "author": "Tahmid Tanzim <tahmid.tanzim@gmail.com>",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.13",
+        "@types/jest": "^28.1.6",
+        "@types/node": "^18.7.3",
+        "@types/supertest": "^2.0.12",
+        "concurrently": "^7.3.0",
+        "jest": "^28.1.3",
+        "nodemon": "^2.0.19",
+        "supertest": "^6.2.4",
+        "ts-jest": "^28.0.8",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.7.4"
+    }
 }

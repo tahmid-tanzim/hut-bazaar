@@ -1,7 +1,9 @@
 .DS_Store
 node_modules/
 dist/
+coverage
 .env
+
 ### IntelliJ IDEA ###
 .idea
 
