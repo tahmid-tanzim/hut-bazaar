@@ -10,14 +10,23 @@ services:
       - /app/node_modules
       - ./server:/app
     ports:
-      - "8000:8000"
+      - 8000:8000
+    depends_on: 
+      - db
 
-  # postgres:
-  #   image: postgres:12.7-alpine
-  #   restart: always
-  #   ports:
-  #     - "5432:5432"
-  #   environment:
-  #     POSTGRES_USER: 'admin'
-  #     POSTGRES_PASSWORD: 'C0V1D19'
-  #     POSTGRES_DB: 'wallet_production'
+  db:
+    image: mongo:latest
+    restart: always
+    volumes:
+      - ./database:/data/db
+    # env_file: 
+    #   - ./server/.env
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root123
+      # - MONGO_INITDB_DATABASE=$${MONGODB_DATABASE}
+
+volumes: 
+  database: 

@@ -1,6 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 import httpStatusCodes from "../utils/http-status-codes";
 
+import { run_mongo } from "../model/category";
+
 function resolveAfterSeconds(ms: any) {
     return new Promise(resolve => {
         setTimeout(() => {
@@ -48,6 +50,7 @@ class CategoryController {
     // Display list of all subcategories.
     public subcategory_list(req: Request, res: Response, next: NextFunction) {
         console.log('GET subcategory_list');
+        run_mongo().catch(err => console.log(err));
         res.status(httpStatusCodes.OK).json({
             data: [
                 {

@@ -10,6 +10,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Register Main Router
-app.use("/", router);
+app.use("/api", router);
 
 export default app;
