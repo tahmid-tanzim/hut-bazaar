@@ -1,6 +1,7 @@
 version: "3.9"
 services:
   server:
+    container_name: container-node-server
     build:
       context: ./server
       dockerfile: Dockerfile.dev
@@ -15,18 +16,14 @@ services:
       - db
 
   db:
+    container_name: container-mongodb
     image: mongo:latest
     restart: always
     volumes:
+      - ./docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
       - ./database:/data/db
-    # env_file: 
-    #   - ./server/.env
     ports:
       - 27017:27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root123
-      # - MONGO_INITDB_DATABASE=$${MONGODB_DATABASE}
-
-volumes: 
-  database: 
+      MONGO_INITDB_ROOT_PASSWORD: MyPass123

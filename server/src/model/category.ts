@@ -19,14 +19,11 @@ const User = model<IUser>('User', userSchema);
 
 export const run_mongo = async () => {
   // 4. Connect to MongoDB
-  const db_user = process.env.MONGODB_USER;
-  const db_pass = process.env.MONGODB_PASSWORD;
-  const db_name = process.env.MONGODB_DATABASE;
-  const uri = `mongodb://${db_user}:${db_pass}@db:27017/${db_name}`;
-  console.log(uri);
-  await connect(uri); 
+  const connection_string: string = process.env.MONGODB_CONNSTRING ?? '';
+  console.log(connection_string);
+  await connect(connection_string); 
   const user = new User({
-    name: 'Bill',
+    name: 'Bill Gates 2',
     email: 'bill@initech.com',
     avatar: 'https://i.imgur.com/dM7Thhn.png'
   });
