@@ -10,4 +10,4 @@ npm run build
 npm start
 ```
 
-# TODO : Create Docker Container for hut-bazaar-server
+Docker delete build cache objects `docker system prune`
